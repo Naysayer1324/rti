@@ -13,6 +13,6 @@
 <body background="{% static 'static/headLights2.png' %}">
     <img class="logo" src={% static 'static\logo.png' %} alt="logo">
     <p class="slogan">Freude am Fahren</p>
-    <a class="text" href="main.html" target="_blank">BMW</a>
+    <a class="text" href="{% url 'main:main' %}" target="_blank">BMW</a>
 </body>
 </html>

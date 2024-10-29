@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMW</title>
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
     <link rel="icon" type="images/x-icon" href="./Фавикон/new logo 3 (1).ico">
     
 </head>
 <body>
-    <img class="logo" src="static\logo.png" alt="logo">
+    <img class="logo" src="{% static 'static\logo.png' %}" alt="logo">
     <div id="header" class="header">
         <ul>
             <li><a href="catalog.html" target="_blank">Каталог</a></li>
@@ -27,12 +29,12 @@
         <p class="innerDescr">Это качество и уровень, созданный многолетней историей и доказанный на практике.</p>
         <p class="innerDescr">С BMW не бывает плохих дней.</p>
     </span>
-    <img class="m5" src="static\bmwM5.jpg" alt="bmwM5">
+    <img class="m5" src="{% static 'static\bmwM5.jpg' %}" alt="bmwM5">
 
 
     <p class="spec">Специальное предложение</p>
 
-    <img class="specImg" src="static\m5-1.png" alt="m5-1">
+    <img class="specImg" src="{% static 'static\m5-1.png' %}" alt="m5-1">
     <p class="name">BMW 520i седан</p>
     <p class="price">$35 000</p>
     <a class="more" href="#">Узнать больше</a>
@@ -40,7 +42,7 @@
 <span>
     <p class="catalog">Каталог</p>
 
-    <img class="specImg1" src="static\bmw-new-x7.png" alt="m5-1">
+    <img class="specImg1" src="{% static 'static\bmw-new-x7.png' %}" alt="m5-1">
     <p class="name1">BMW X7 2023</p>
     <p class="price1">$75 000</p>
     <a class="more1" href="#">Узнать больше</a>
@@ -52,12 +54,12 @@
 </span>
 
 <p class="catlink">
-    <a class="catlink" href="catalog.html">Перейти к каталогу ></a>
+    <a class="catlink" href="{% url 'goods:catalog' %}">Перейти к каталогу ></a>
 </p>
 
 
 <p class="subscription">Подписка на BMW</p>
-<img class="wha" src="static\amobil.webp" alt="wha?">
+<img class="wha" src="{% static 'static\amobil.webp' %}" alt="wha?">
 <p class="supsubb">
     <p class="subb">Возможность пользования </p>
     <p class="subb">автомобилем без необходимости</p>
