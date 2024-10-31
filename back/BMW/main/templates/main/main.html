@@ -1,27 +1,11 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMW</title>
+    {% block css %}
     <link rel="stylesheet" href="{% static 'styles/main.css' %}">
-    <link rel="icon" type="images/x-icon" href="./Фавикон/new logo 3 (1).ico">
-    
-</head>
-<body>
-    <img class="logo" src="{% static 'static\logo.png' %}" alt="logo">
-    <div id="header" class="header">
-        <ul>
-            <li><a href="catalog.html" target="_blank">Каталог</a></li>
-            <li><a href="#">Личный кабинет</a></li>
-            <li><a href="#">Контакты</a></li>
-            <li><a href="#">Корзина</a></li>
-        </ul>
-    </div>
+    {% endblock %}
 
+    {% block content %}
     <p class="nadpis">Bayerische Motoren Werke AG</p>
     
     <span class="descr">
@@ -39,40 +23,33 @@
     <p class="price">$35 000</p>
     <a class="more" href="#">Узнать больше</a>
 
-<span>
-    <p class="catalog">Каталог</p>
+    <span>
+        <p class="catalog">Каталог</p>
 
-    <img class="specImg1" src="{% static 'static\bmw-new-x7.png' %}" alt="m5-1">
-    <p class="name1">BMW X7 2023</p>
-    <p class="price1">$75 000</p>
-    <a class="more1" href="#">Узнать больше</a>
-<!-- 
-    <img class="specImg2" src="static\bmw-x3.png" alt="m5-1">
-    <p class="name2">BMW X3 2023</p>
-    <p class="price2">$60 000</p>
-    <a class="more2" href="#">Узнать больше</a> -->
-</span>
+        <img class="specImg1" src="{% static 'static\bmw-new-x7.png' %}" alt="m5-1">
+        <p class="name1">BMW X7 2023</p>
+        <p class="price1">$75 000</p>
+        <a class="more1" href="#">Узнать больше</a>
+    <!--
+        <img class="specImg2" src="static\bmw-x3.png" alt="m5-1">
+        <p class="name2">BMW X3 2023</p>
+        <p class="price2">$60 000</p>
+        <a class="more2" href="#">Узнать больше</a> -->
+    </span>
 
-<p class="catlink">
-    <a class="catlink" href="{% url 'goods:catalog' %}">Перейти к каталогу ></a>
-</p>
-
-
-<p class="subscription">Подписка на BMW</p>
-<img class="wha" src="{% static 'static\amobil.webp' %}" alt="wha?">
-<p class="supsubb">
-    <p class="subb">Возможность пользования </p>
-    <p class="subb">автомобилем без необходимости</p>
-    <p class="subb">покупки</p>
-    <a class="subbl" href="#">Узнать больше</a>
-</p>
- 
+    <p class="catlink">
+        <a class="catlink" href="{% url 'goods:catalog' %}">Перейти к каталогу ></a>
+    </p>
 
 
+    <p class="subscription">Подписка на BMW</p>
+    <img class="wha" src="{% static 'static\amobil.webp' %}" alt="wha?">
+    <p class="supsubb">
+        <p class="subb">Возможность пользования </p>
+        <p class="subb">автомобилем без необходимости</p>
+        <p class="subb">покупки</p>
+        <a class="subbl" href="#">Узнать больше</a>
+    </p>
 
-<div class="footer">
-    <p class="s">© BMW AG 2024</p>
-</div>
 
-</body>
-</html>
+    {% endblock %}

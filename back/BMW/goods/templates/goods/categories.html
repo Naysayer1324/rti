@@ -1,35 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMW</title>
-    <link rel="stylesheet" href="./styles/categories.css">
-    <link rel="icon" type="images/x-icon" href="./Фавикон/new logo 3 (1).ico">
+{% extends 'base.html' %}
+{% load static %}
 
-</head>
-<body>
-    <img class="logo" src="static\logo.png" alt="logo">
-    <div id="header" class="header">
-        <ul>
-            <li><a href="#">Каталог</a></li>
-            <li><a href="#">О нас</a></li>
-            <li><a href="#">Контакты</a></li>
-            <li><a href="#">Корзина</a></li>
-        </ul>
-    </div>
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'styles/categories.css' %}">
+    {% endblock %}
 
-    <p class="PageName">M5</p>
 
+    {% block content %}
+    <p class="PageName">{{ category.name }}</p>
     <div class="categories">
-        <img class="imag" src="static\m5-1.png" alt="m5">
+        {% for good in goods %}
+        <img class="imag" src="{{ category.image.url }}" alt="{{ category.slug }}">
         <div class="category">
-            <a class="catname" href="goods.html">BMW M5</a>
-            <p class="price">$35 000</p>
-            <p class="descr">BMW 5 серии – эталон современного спортивного седана бизнес-класса. Модель отличается стильными атлетичными формами, динамичным силуэтом и лаконичным дизайном.</p>
+            <a class="catname" href="{% url 'goods:goods' good.slug %}">{{ good.name }}</a>
+            <p class="price">{{ good.price }}</p>
+            <p class="descr">{{ good.description }}</p>
         </div>
+            {% endfor %}
     </div>
-
-</body>
-</html>
+    {% endblock %}

@@ -1,0 +1,69 @@
+body {
+    background: linear-gradient(135deg,  #000000, #014500);
+    color:  rgb(226, 226, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.logo {
+    height: 80px;
+    margin-top: -140px;
+    margin-left: 20px;
+    margin-bottom: px;
+    position: fixed;
+}
+
+a {
+    color: rgb(226, 226, 255);
+    text-decoration: None;
+}
+
+.header {
+    width: 600px;
+    display: flex;
+    top: 40px; 
+    margin-left: 840px;
+    position: fixed;
+}
+
+ul{
+    width: 500px;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+}
+
+li{
+    display: inline;
+}
+
+a:hover{
+    color:#ffffff;
+}
+
+.info {
+    margin-left: 300px;
+    margin-top: 170px;
+}
+
+.priv  {
+    margin-left: 30px;
+    font-size: 29px;
+}
+
+.prev {
+    margin-left: 900px;
+    margin-top: -250px;
+}
+
+.prevname {
+    font-size: 24px;
+}
+
+.prevlist {
+    margin-left: -257px;
+}
+
+.footer {
+    margin-top: 307px;
+    margin-left: 690px;
+}

@@ -1,0 +1,69 @@
+body {
+    background: linear-gradient(135deg,  #000000, #014500);
+    color:  rgb(226, 226, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.logo {
+    height: 80px;
+    margin-top: -230px;
+    margin-left: 20px;
+    margin-bottom: px;
+    position: fixed;
+}
+
+a {
+    color: rgb(226, 226, 255);
+    text-decoration: None;
+}
+
+.header {
+    width: 600px;
+    display: flex;
+    top: 40px; 
+    margin-left: 840px;
+    position: fixed;
+}
+
+ul{
+    width: 500px;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+}
+
+li{
+    display: inline;
+}
+
+a:hover{
+    color:#ffffff;
+}
+
+.cont {
+    margin-top: 260px;
+    margin-left: 500px;
+}
+
+.log {
+    font-size: 32px;
+    margin-left: 200px;
+}
+
+.form {
+    font-size: 18px;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+
+}
+
+.form input{
+    margin-bottom: 20px;
+}
+
+.footer {
+    margin-top: 217px;
+    margin-left: 690px;
+}

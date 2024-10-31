@@ -1,36 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMW</title>
-    <link rel="stylesheet" href="./styles/catalog.css">
-    <link rel="icon" type="images/x-icon" href="./Фавикон/new logo 3 (1).ico">
-
-</head>
-<body>
-    <img class="logo" src="static\logo.png" alt="logo">
-    <div id="header" class="header">
-        <ul>
-            <li><a href="#">Каталог</a></li>
-            <li><a href="#">О нас</a></li>
-            <li><a href="#">Контакты</a></li>
-            <li><a href="#">Корзина</a></li>
-        </ul>
-    </div>
+{% extends 'base.html' %}
+{% load static %}
 
 
+
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'styles/catalog.css' %}">
+    {% endblock %}
+
+
+    {% block content %}
     <p class="PageName">Каталог</p>
-
     <div class="categories">
         <div class="category">
+            {% for category in categories %}
             <div class="catname">
-                <a class="catname" href="categories.html">BMW M5</a>
+                <a class="catname" href="{% url 'goods:categories' category.slug %}">{{ category.name }}</a>
             </div>
-            <img class="imag" src="static\m5-1.png" alt="m5">
+            <img class="imag" src="{{ category.image.url }} " alt="{{ category.slug }}">
+            {% endfor %}
         </div>
     </div>
-
-</body>
-</html>
+    {% endblock %}

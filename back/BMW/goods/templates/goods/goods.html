@@ -1,35 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMW</title>
-    <link rel="stylesheet" href="./styles/goods.css">
-    <link rel="icon" type="images/x-icon" href="./Фавикон/new logo 3 (1).ico">
+{% extends 'base.html' %}
+{% load static %}
 
-</head>
-<body>
-    <img class="logo" src="static\logo.png" alt="logo">
-    <div id="header" class="header">
-        <ul>
-            <li><a href="#">Каталог</a></li>
-            <li><a href="#">О нас</a></li>
-            <li><a href="#">Контакты</a></li>
-            <li><a href="#">Корзина</a></li>
-        </ul>
-    </div>
 
-    <p class="PageName">BMW M5 2023</p>
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'styles/goods.css' %}">
+    {% endblock %}
 
-    <img class="imag" src="static\m5-1.png" alt="m5">
 
+
+    {% block content %}
+    <p class="PageName">{{ good.name }}</p>
+    <img class="imag" src="{{ good.image.url }}" alt="m5">
     <div class="main">
-        <p class="name">BMW M5 2023</p>
-        <p class="price">$35 000</p>
-        <p class="descr">Спортивные характеристики и ощущение уверенности BMW 5 серии выведены на принципиально новый уровень – в первую очередь за счет традиционных пропорций BMW: длинной колесной базы, удлиненного капота и плавной линии крыши. Точные контуры кузова создают удивительный контраст с обтекаемыми поверхностями уменьшенной площади, формируя современный и лаконичный образ. Особенную динамичность передней части кузова придают характерная решетка радиатора и лазерные фары BMW Laserlight, подчеркивающие инновационный характер модели. Незаметный переход между передними фарами и решеткой радиатора дополнительно подчеркивает ширину автомобиля и создает ощущение исключительной элегантности и статусности, которое дополнительно усиливается при взгляде на боковую и заднюю части кузова – вплоть до патрубков выхлопной системы свободной формы, гармонично интегрированных в задний бампер. Вместе эти детали формируют стильный и при этом спортивный образ.</p>
+        <p class="name">{{ good.name }}</p>
+        <p class="price">{{ good.price }}</p>
+        <p class="descr">{{ good.description }}</p>
     </div>
-
     <div class="param">
         <ul class="pname">
             <li><p>Мощность, кВт (л.с.) при об/мин:</p></li>
@@ -37,20 +23,12 @@
             <li><p>Расход топлива в смешанном цикле, л/100 км:</p></li>
             <li><p>Выбросы CO2 в г/км (смешанный цикл):</p></li>
         </ul>
-
         <ul class="pvalue">
-            <li><p>120-135(163-184)/5,000-6,500</p></li>
-            <li><p>8.6-7.8</p></li>
-            <li><p>6.8</p></li>
-            <li><p>150</p></li>
+            <li><p>{{ good.power }}</p></li>
+            <li><p>{{ good.acceleration }}</p></li>
+            <li><p>{{ good.consumption }}</p></li>
+            <li><p>{{ good.emissions }}</p></li>
         </ul>
     </div>
-
     <a class="zak" href="#">Получить предложение</a>
-
-    <div class="footer">
-        <p class="s">© BMW AG 2024</p>
-    </div>
-
-</body>
-</html>
+    {% endblock %}
