@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW</title>
+    <link rel="stylesheet" href="./styles/login.css">
+    <link rel="icon" type="images/x-icon" href="./Фавикон/new logo 3 (1).ico">
+
+</head>
+<body>
+    <img class="logo" src="static\logo.png" alt="logo">
+    
+    <div id="header" class="header">
+        <ul>
+            <li><a href="#">Каталог</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Контакты</a></li>
+            <li><a href="#">Корзина</a></li>
+        </ul>
+    </div>
+
+    <div class="cont">
+        <p class=log>Войти</p>
+        <form class="form" action="{% url "user:login" %}" method="post">
+            {% csrf_token %}
+            Логин <input type="text" name="login" size="10">
+            Пароль <input type="password" name="password" size="10">
+        </form>
+    </div>
+
+    <div class="footer">
+        <p class="s">© BMW AG 2024</p>
+    </div>
+</body>
+</html>
