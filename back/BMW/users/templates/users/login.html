@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMW</title>
-    <link rel="stylesheet" href="./styles/login.css">
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}">
     <link rel="icon" type="images/x-icon" href="./Фавикон/new logo 3 (1).ico">
 
 </head>
 <body>
-    <img class="logo" src="static\logo.png" alt="logo">
+    <img class="logo" src="{% static 'static\logo.png'%}" alt="logo">
     
     <div id="header" class="header">
         <ul>

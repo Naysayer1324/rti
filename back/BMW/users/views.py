@@ -10,9 +10,9 @@ from django.shortcuts import redirect, render
 from django.urls import reverse, reverse_lazy
 from django.views.generic import CreateView, UpdateView, TemplateView
 
-from carts.models import Cart
-from common.mixins import CacheMixin
-from orders.models import Order, OrderItem
+# from carts.models import Cart
+# from common.mixins import CacheMixin
+# from orders.models import Order, OrderItem
 from users.forms import ProfileForm, UserLoginForm, UserRegistrationForm
 
 
@@ -42,7 +42,7 @@ class UserLoginView(LoginView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Home - Авторизация'
+        context['title'] = 'Авторизация'
         return context
 
 
@@ -67,33 +67,11 @@ class UserRegistrationView(CreateView):
             return HttpResponseRedirect(self.get_success_url())
 
 
-class UserProfileView(LoginRequiredMixin, CacheMixin, UpdateView):
+class UserProfileView(UpdateView):
     template_name = 'users/profile.html'
     form_class = ProfileForm
     success_url = reverse_lazy('users:profile')
 
-    def get_object(self, queryset=None):
-        return self.request.user
-
-    def form_valid(self, form):
-        messages.success(self.request, 'Все оке)')
-        return super().form_valid(form)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        orders = Order.objects.filter(user=self.request.user).prefetch_related(
-            Prefetch(
-                'orderitem_set',
-                queryset=OrderItem.objects.select_related('products')
-            )
-        ).order_by('-id')
-        context['orders'] = self.set_get_cache(orders, f'user_{self.request.user.id}', 60)
-        return context
-
-    def form_invalid(self, form):
-        messages.error(self.request, 'Неее, нихуя')
-        return super().form_invalid(form)
 
 
 @login_required

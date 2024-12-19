@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 
     'main',
     'goods',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -77,8 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'bmw',
-        'USER': 'Matt',
-        'PASSWORD': 'Bason9602',
+        'USER': '****',
+        'PASSWORD': '****',
         'HOST': 'localhost',
         'PORT': '5432',
     }
